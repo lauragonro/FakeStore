@@ -24,7 +24,7 @@ export default function App() {
           <div className='buttons'>
             <button><Link to={"/Cart"}>Cart</Link></button>
           </div>
-          <button><Link to={"/"}>Go back</Link></button>
+          <button><Link to={"/"}>Return</Link></button>
           <p><User /></p>
         </div>
       </header>
