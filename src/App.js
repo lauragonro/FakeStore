@@ -21,8 +21,10 @@ export default function App() {
             <h3>Filter by categories: </h3>
             <p><Categories /></p>
           </div>
-          <button><Link to={"/"}>Continue shopping :3</Link></button>
-          <button><Link to={"/Cart"}>Cart</Link></button>
+          <div className='buttons'>
+            <button><Link to={"/Cart"}>Cart</Link></button>
+          </div>
+          <button><Link to={"/"}>Go back</Link></button>
           <p><User /></p>
         </div>
       </header>
