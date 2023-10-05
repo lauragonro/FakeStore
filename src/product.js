@@ -1,37 +1,42 @@
 import React from 'react';
+import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
-import {useProducts} from "./context";
 
 export default function Product() {
+  const [product, setProduct] = useState([]);
   const {id} = useParams();
-  const {setProductId, selectedProduct} = useProducts();
 
-  setProductId(id);
+  useEffect(() => {
+    fetch(`https://fakestoreapi.com/products/${id}`)
+      .then((response) => response.json())
+      .then((data) => setProduct(data));
+  }, []);
 
   function handleClick() {
     if (typeof(localStorage) !== "undefined") {
       const storedList = localStorage.getItem('cart');
       const currentList = storedList ? JSON.parse(storedList) : [];
 
-      currentList.push(selectedProduct)
+      currentList.push(product)
       localStorage.setItem('cart', JSON.stringify(currentList));
-    } 
+      } 
+    console.log(localStorage);
   }
 
   return (
     <>
-      {selectedProduct ? (
+      {product ? (
         <>
         <div className="Details">
           <>
-            <img src={selectedProduct.image} alt={selectedProduct.category}
-            width="300px"
-            height="350px"
+            <img src={product.image} alt={product.category}
+            width="180px"
+            height="210px"
             />
             <div className="Text2">
-                <h2>{selectedProduct.title}</h2>
-                <p>Only for ${selectedProduct.price}</p>
-                <p>{selectedProduct.description}</p>
+                <h2>{product.title}</h2>
+                <p>Only for ${product.price}</p>
+                <p>{product.description}</p>
                 <button onClick={handleClick}>Add to Cart :D</button>
             </div>
           </>
