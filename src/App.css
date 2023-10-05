@@ -2,9 +2,10 @@
   text-align: center;
   background-color: #272b33;
 
-  padding-bottom: 5px;
+  padding-bottom: 3px;
   padding-top: 20px;
   color: #f5f5f5;
+  min-height: 100vh;
 }
 
 .container{
@@ -14,6 +15,7 @@
 
 .Title{
   line-height: 5px;
+  padding-bottom: 15px;
 }
 
 .Header{
@@ -72,12 +74,11 @@
 }
 
 .Name{
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .Details {
   margin: 30px;
-  margin-top: 0px;
 
   background-color: #3b3e43;
 
@@ -97,3 +98,23 @@
   font-size: 18px;
 }
 
+.Categories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: #3b3e43;
+
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  justify-content: center;
+  font-size: small;
+}
+
+.buttons{
+  margin-inline: 20px;
+}
