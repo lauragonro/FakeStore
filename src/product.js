@@ -30,8 +30,8 @@ export default function Product() {
         <div className="Details">
           <>
             <img src={product.image} alt={product.category}
-            width="180px"
-            height="210px"
+            width="250px"
+            height="310px"
             />
             <div className="Text2">
                 <h2>{product.title}</h2>
