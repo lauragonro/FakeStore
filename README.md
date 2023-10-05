@@ -1,3 +1,6 @@
+Realizado por: Juliana González Ronsería
+Código: 0000203290
+
 # FakeStore
 ![image](https://github.com/lauragonro/FakeStore/assets/141372877/c94c0c77-a6fa-4ec1-a9c2-2b7ed45c7043)
 # FakeStore with shopping cart
