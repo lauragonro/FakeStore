@@ -1,14 +1,22 @@
 import React from 'react';
-import {useState, useEffect} from "react";
+import {useEffect, useReducer} from "react";
 import {Link} from "react-router-dom";
 
+import { actions, initialState, productReducer } from "./reducer";
+
 export default function Stock() {
-    const [products, setProducts] = useState([]);
+    const [state, dispatch] = useReducer(productReducer, initialState);
+    const {products, error} = state;
 
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
         .then((response) => response.json())
-        .then((data) => setProducts(data));     
+        .then((data) => 
+            dispatch({ type: actions.FETCH_PRODUCT_SUCCESS, payload: data})
+        )
+        .catch((e) =>
+            dispatch({ type: actions.FETCH_PRODUCT_FAIL, payload: e.message})
+        );    
     }, []);
 
     const listProducts = products.map(product =>
@@ -30,6 +38,7 @@ export default function Stock() {
     return (
         <>
         <ul className="ListProducts">
+            {error && <div>{error}</div>}
             {listProducts}
         </ul>
         </>
