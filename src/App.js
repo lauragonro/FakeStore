@@ -32,6 +32,7 @@ export default function App() {
           <Route exact path="/products/:id" element={<Product />} />
           <Route exact path="/cart" element={<Cart />} />
           <Route exact path="/category/:category" element={<Category />} />
+          <Route exact path="/category/:category/products/:id" element={<Product />} />
         </Routes>
       </div>
       <footer>
@@ -40,5 +41,3 @@ export default function App() {
     </div>
   );
 }
-
-
