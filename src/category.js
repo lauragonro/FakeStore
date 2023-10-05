@@ -1,7 +1,6 @@
 import React from 'react';
 import {useEffect, useReducer} from "react";
 import {useParams} from "react-router-dom";
-import {Link} from "react-router-dom";
 
 import { actions, initialState, productReducer } from "./reducer";
 
@@ -32,7 +31,7 @@ export default function Category() {
             <div className="Text">
                 <h4>{product.title}</h4>
                 <p>Por ${product.price}</p>
-                <button><Link to={`products/${product.id}`}>See details</Link></button>
+                <button>See details</button>
             </div>
         </>
     </div>
